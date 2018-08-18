@@ -1,0 +1,7 @@
+{
+  "plugins": {
+    "@vue/cli-plugin-eslint": {
+      "lintOn": ["commit"]
+    }
+  }
+}
