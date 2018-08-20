@@ -2,7 +2,6 @@ import createStoreConfig from './create-store-config'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { fetchItems } from '../api'
-import flushPromises from 'flush-promises'
 
 jest.mock('../api')
 
@@ -16,8 +15,7 @@ test('returns sorted items', async () => {
     { score: 1 }
   ]
   fetchItems.mockResolvedValue(items)
-  store.dispatch('fetchItems')
-  await flushPromises()
+  await store.dispatch('fetchItems')
   expect(store.getters.displayedItems).toEqual([
     { score: 1 },
     { score: 2 },
@@ -36,8 +34,7 @@ test('returns sorted items in descending order', async () => {
   ]
   fetchItems.mockResolvedValue(items)
   store.commit('toggleSortOrder')
-  store.dispatch('fetchItems')
-  await flushPromises()
+  await store.dispatch('fetchItems')
   expect(store.getters.displayedItems).toEqual([
     { score: 3 },
     { score: 2 },
