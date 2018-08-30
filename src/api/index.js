@@ -1,4 +1,4 @@
-export function fetchItems () {
+export function fetchData () {
   return fetch('https://www.reddit.com/r/aww/top.json?t=all', {
     headers: {
       'Accept': 'application/json'

@@ -1,8 +1,8 @@
-import { fetchItems } from '../api'
+import { fetchData } from '../api'
 
 export default {
   fetchItems ({ commit }) {
-    return fetchItems()
+    return fetchData()
       .then(items => commit('setItems', { items }))
   }
 }
