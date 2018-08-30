@@ -24,7 +24,7 @@
 export default {
   computed: {
     items () {
-      return this.$store.getters.displayedItems
+      return this.$store.state.items
     }
   },
   created () {
