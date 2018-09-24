@@ -6,11 +6,14 @@ export function fetchData () {
   })
     .then(res => res.json())
     .then(res => {
-      return res.data.children.map(({ data }) => ({
-        thumbnail: data.preview.images[0].resolutions[1].url.replace(/&amp;/g, '&'),
-        title: data.title,
-        score: data.score,
-        id: data.id
-      }))
+      return res.data.children.map(({ data }) => {
+        const resolutions = data.preview.images[0].resolutions
+        return {
+          thumbnail: (resolutions[1] || resolutions[0]).url.replace(/&amp;/g, '&'),
+          title: data.title,
+          score: data.score,
+          id: data.id
+        }
+      })
     })
 }

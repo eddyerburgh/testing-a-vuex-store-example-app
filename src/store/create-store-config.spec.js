@@ -8,8 +8,11 @@ localVue.use(Vuex)
 
 jest.mock('../api')
 
-test('returns items', async () => {
-  const items = [{}, {}, {}]
+test('returns first 20 items', async () => {
+  const items = Array(22)
+    .fill()
+    .map((v, i) => i)
+
   fetchData.mockResolvedValue(items)
 
   const storeConfig = createStoreConfig()
@@ -17,5 +20,5 @@ test('returns items', async () => {
 
   await store.dispatch('fetchItems')
 
-  expect(store.state.items).toBe(items)
+  expect(store.getters.displayItems).toEqual(items.slice(0, 20))
 })

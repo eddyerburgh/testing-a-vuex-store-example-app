@@ -3,9 +3,12 @@ export default {
     state.items = items
   },
 
-  toggleSortOrder (state) {
-    state.sortOrder = state.sortOrder === 'ascending'
-      ? 'descending'
-      : 'ascending'
+  incrementPage (state) {
+    state.page++
+  },
+
+  decrementPage (state) {
+    state.page--
   }
+
 }
