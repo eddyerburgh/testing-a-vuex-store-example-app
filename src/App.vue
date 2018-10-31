@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="column is-half is-offset-one-quarter">
-    <h1 class="title">Top posts of /r/aww</h1>
+    <h1 class="title">Cute pics</h1>
       <NavBar />
       <ImageList />
     </div>

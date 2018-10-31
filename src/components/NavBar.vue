@@ -1,14 +1,14 @@
 <template>
 <nav role="navigation" aria-label="dropdown navigation">
   <a
-    class="button is-outlined"
+    class="pagination-previous"
     :disabled="!hasLess"
     @click="decrement"
   >
     Prev
   </a>
   <a
-    class="button is-outlined"
+    class="pagination-next"
     :disabled="!hasMore"
     @click="increment"
   >
