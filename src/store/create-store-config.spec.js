@@ -19,5 +19,5 @@ test('returns first 20 items', async () => {
   await store.dispatch('fetchItems')
 
   expect(store.getters.displayItems)
-    .toEqual(items.slice(0, 21))
+    .toEqual(items.slice(0, 20))
 })

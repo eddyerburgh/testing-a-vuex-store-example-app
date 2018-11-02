@@ -24,7 +24,6 @@ test('returns first 20 items if state.page value is 1', () => {
 
   const result = getters.displayItems(state)
 
-  expect(result).toHaveLength(20)
   expect(result).toEqual(items.slice(0, 20))
 })
 
@@ -40,6 +39,5 @@ test('returns items 21-40 if state.page value is 2', () => {
 
   const result = getters.displayItems(state)
 
-  expect(result).toHaveLength(20)
   expect(result).toEqual(items.slice(20, 40))
 })
